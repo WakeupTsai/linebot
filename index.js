@@ -33,11 +33,12 @@ bot.on('message', function(event) {
         event.reply("點名成功，你的userID為"+event.source.userId).then(function(data) {
         // success
         console.log(msg);
-        console.log("名稱：");
         client.getProfile(event.source.userId)
           .then((profile) => {
+          name = profile.displayNam;
           console.log(profile.displayName);
         })
+        console.log("名稱："+name);
       }).catch(function(error) {
         // error
         console.log('error');
