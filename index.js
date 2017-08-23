@@ -13,34 +13,29 @@ const client = new line.Client({
   channelAccessToken: "W7lMYwD9YJBRZLVSHKoJmIQThb13+EP1srUaDT00cDNxjtdLEtjS5BVQDIi3twoSvPfqkvAJV1yzUNaNIkTIbOJp3tuaL7aDQBZ6oofgEVYUwEesS7nWRpvrepjaCieXjVIWk4Rw1bSCNnUmHQ1nogdB04t89/1O/w1cDnyilFU="
 });
 
-var ruleClient = new XMLHttpRequest();
-
-
 bot.on('message', function(event) {
-  console.log(event);
+  //console.log(event);
   if (event.message.type = 'text') {
     var msg = event.message.text;
     if ( msg == '點名') {
       client.getProfile(event.source.userId)
         .then((profile) => {
           event.reply( profile.displayName+"，點名成功。").then(function(data) {
-          // success
           console.log(msg);
         }).catch(function(error) {
           // error
           console.log('error');
         });
-
       })
-        
     }
     else if ( msg == '規則') {
       console.log("1");
-      ruleClient.open('GET', '/rule.txt');
+      var rule = new XMLHttpRequest();
+      rule.open('GET', '/rule.txt', false);
       console.log("2");
-      ruleClient.onreadystatechange = function() {
+      rule.onreadystatechange = function() {
         console.log("3");
-        console.log(ruleClient.responseText);
+        console.log(rule.responseText);
         console.log("4");
       }
     }
