@@ -32,7 +32,7 @@ bot.on('message', function(event) {
       client.getProfile(event.source.userId)
         .then((profile) => {
 
-        event.reply("點名成功，使用者名稱為"+ profile.displayName +"，你的userID為"+event.source.userId).then(function(data) {
+        event.reply("點名成功\n 使用者名稱："+ profile.displayName +"\nuserID："+event.source.userId).then(function(data) {
           // success
           console.log(msg);
         }).catch(function(error) {
