@@ -11,7 +11,7 @@ bot.on('message', function(event) {
   if (event.message.type = 'text') {
     var msg = event.message.text;
     if ( msg == '點名') {
-      event.reply("點名題目為：blablabla").then(function(data) {
+      event.reply("點名成功，你的userID為"+event.source.userID).then(function(data) {
         // success
         console.log(msg);
       }).catch(function(error) {
