@@ -26,19 +26,21 @@ function getName(userId) {
 
 bot.on('message', function(event) {
   console.log(event);
-  var name;
   if (event.message.type = 'text') {
     var msg = event.message.text;
     if ( msg == '點名') {
         event.reply("點名成功，你的userID為"+event.source.userId).then(function(data) {
         // success
         console.log(msg);
+        var name
         client.getProfile(event.source.userId)
           .then((profile) => {
           name = profile.displayName;
           console.log(profile.displayName);
         })
+        console.log(name);
         console.log("名稱："+name);
+
       }).catch(function(error) {
         // error
         console.log('error');
