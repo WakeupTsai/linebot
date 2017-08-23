@@ -14,10 +14,6 @@ const client = new line.Client({
 });
 
 var ruleClient = new XMLHttpRequest();
-  ruleClient.open('GET', '/rule.txt');
-  ruleClient.onreadystatechange = function() {
-  console.log(ruleClient.responseText);
-}
 
 
 bot.on('message', function(event) {
@@ -37,6 +33,12 @@ bot.on('message', function(event) {
 
       })
         
+    }
+    else if ( msg == '點名') {
+      ruleClient.open('GET', '/rule.txt');
+      ruleClient.onreadystatechange = function() {
+        console.log(ruleClient.responseText);
+      }
     }
     else {
       event.reply(msg).then(function(data) {
