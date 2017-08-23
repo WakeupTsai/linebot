@@ -16,7 +16,7 @@ const client = new line.Client({
 var ruleClient = new XMLHttpRequest();
   ruleClient.open('GET', '/rule.txt');
   ruleClient.onreadystatechange = function() {
-  alert(ruleClient.responseText);
+  console.log(ruleClient.responseText);
 }
 
 
