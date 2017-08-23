@@ -31,11 +31,11 @@ bot.on('message', function(event) {
     else if ( msg == '規則') {
 
       fs = require('fs')
-      fs.readFile('rule.txt', 'utf8', function (err,data) {
+      fs.readFile('rule.txt', 'utf8', function (err,rule) {
         if (err) {
           return console.log(err);
         }
-        event.reply(data).then(function(data) {
+        event.reply(rule).then(function(data) {
         }).catch(function(error) {
         // error
           console.log('error');
