@@ -13,9 +13,7 @@ const client = new line.Client({
 });
 
 function getName(userId) {
-  var test = client.getProfile(userId)
-  console.log(test.displayName);
-    /*
+  client.getProfile(userId)
     .then((profile) => {
       console.log(profile.displayName);
       return profile.displayName;
@@ -23,7 +21,6 @@ function getName(userId) {
     .catch((err) => {
       // error handling
     });
-    */
 }
 
 
