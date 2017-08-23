@@ -12,10 +12,10 @@ const client = new line.Client({
   channelAccessToken: "W7lMYwD9YJBRZLVSHKoJmIQThb13+EP1srUaDT00cDNxjtdLEtjS5BVQDIi3twoSvPfqkvAJV1yzUNaNIkTIbOJp3tuaL7aDQBZ6oofgEVYUwEesS7nWRpvrepjaCieXjVIWk4Rw1bSCNnUmHQ1nogdB04t89/1O/w1cDnyilFU="
 });
 
-var client = new XMLHttpRequest();
-client.open('GET', '/rule.txt');
-client.onreadystatechange = function() {
-  alert(client.responseText);
+var ruleClient = new XMLHttpRequest();
+  ruleClient.open('GET', '/rule.txt');
+  ruleClient.onreadystatechange = function() {
+  alert(ruleClient.responseText);
 }
 
 
