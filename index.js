@@ -36,7 +36,7 @@ bot.on('message', function(event) {
         client.getProfile(event.source.userId)
           .then((profile) => {
           name = profile.displayName;
-          console.log(profile.displayName);
+          console.log(name);
         })
         console.log(name);
         console.log("名稱："+name);
