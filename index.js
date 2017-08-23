@@ -32,7 +32,7 @@ bot.on('message', function(event) {
       var name
       client.getProfile(event.source.userId)
         .then((profile) => {
-        console.log(profile.displayName);
+        console.log("???"+profile.displayName);
         name = profile.displayName
       })
       console.log("!!!"+name);
