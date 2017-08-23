@@ -31,7 +31,7 @@ bot.on('message', function(event) {
     else if ( msg == '規則') {
       console.log("1");
       var rule = new XMLHttpRequest();
-      rule.open('GET', './rule.txt', true);
+      rule.open('GET', 'rule.txt', true);
       console.log("2");
       rule.onreadystatechange = function() {
         console.log("3");
