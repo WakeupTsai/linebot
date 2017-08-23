@@ -12,16 +12,16 @@ const client = new line.Client({
   channelAccessToken: "W7lMYwD9YJBRZLVSHKoJmIQThb13+EP1srUaDT00cDNxjtdLEtjS5BVQDIi3twoSvPfqkvAJV1yzUNaNIkTIbOJp3tuaL7aDQBZ6oofgEVYUwEesS7nWRpvrepjaCieXjVIWk4Rw1bSCNnUmHQ1nogdB04t89/1O/w1cDnyilFU="
 });
 
-client.getProfile('U3ad73b4ba02fc5d536e9bf11614e6967')
-  .then((profile) => {
-    console.log(profile.displayName);
-    console.log(profile.userId);
-    console.log(profile.pictureUrl);
-    console.log(profile.statusMessage);
-  })
-  .catch((err) => {
-    // error handling
-  });
+function getName(userId) {
+  client.getProfile(userId)
+    .then((profile) => {
+      console.log(profile.displayName);
+      return profile.displayName
+    })
+    .catch((err) => {
+      // error handling
+    });
+}
 
 
 bot.on('message', function(event) {
@@ -32,6 +32,7 @@ bot.on('message', function(event) {
       event.reply("點名成功，你的userID為"+event.source.userId).then(function(data) {
         // success
         console.log(msg);
+        console.log("名稱："+getName(event.source.userId))
       }).catch(function(error) {
         // error
         console.log('error');
