@@ -8,6 +8,21 @@ var bot = linebot({
   channelAccessToken: "W7lMYwD9YJBRZLVSHKoJmIQThb13+EP1srUaDT00cDNxjtdLEtjS5BVQDIi3twoSvPfqkvAJV1yzUNaNIkTIbOJp3tuaL7aDQBZ6oofgEVYUwEesS7nWRpvrepjaCieXjVIWk4Rw1bSCNnUmHQ1nogdB04t89/1O/w1cDnyilFU="
 });
 
+const client = new line.Client({
+  channelAccessToken: "W7lMYwD9YJBRZLVSHKoJmIQThb13+EP1srUaDT00cDNxjtdLEtjS5BVQDIi3twoSvPfqkvAJV1yzUNaNIkTIbOJp3tuaL7aDQBZ6oofgEVYUwEesS7nWRpvrepjaCieXjVIWk4Rw1bSCNnUmHQ1nogdB04t89/1O/w1cDnyilFU="
+});
+
+client.getProfile('U3ad73b4ba02fc5d536e9bf11614e6967')
+  .then((profile) => {
+    console.log(profile.displayName);
+    console.log(profile.userId);
+    console.log(profile.pictureUrl);
+    console.log(profile.statusMessage);
+  })
+  .catch((err) => {
+    // error handling
+  });
+
 
 bot.on('message', function(event) {
   console.log(event);
