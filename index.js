@@ -23,7 +23,6 @@ function getName(userId) {
     .catch((err) => {
       // error handling
     });
-  return profile.displayName;
 }
 
 
