@@ -29,18 +29,15 @@ bot.on('message', function(event) {
   if (event.message.type = 'text') {
     var msg = event.message.text;
     if ( msg == '點名') {
-        event.reply("點名成功，你的userID為"+event.source.userId).then(function(data) {
-        // success
-        console.log(msg);
         var name
         client.getProfile(event.source.userId)
           .then((profile) => {
-          name = profile.displayName;
-          console.log(name);
+          console.log(profile.displayName);
         })
-        console.log(name);
-        console.log("名稱："+name);
-
+        
+      event.reply("點名成功，你的userID為"+event.source.userId).then(function(data) {
+        // success
+        console.log(msg);
       }).catch(function(error) {
         // error
         console.log('error');
