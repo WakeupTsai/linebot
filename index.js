@@ -34,7 +34,7 @@ bot.on('message', function(event) {
       })
         
     }
-    else if ( msg == '點名') {
+    else if ( msg == '規則') {
       ruleClient.open('GET', '/rule.txt');
       ruleClient.onreadystatechange = function() {
         console.log(ruleClient.responseText);
