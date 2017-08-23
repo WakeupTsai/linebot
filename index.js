@@ -31,8 +31,7 @@ bot.on('message', function(event) {
     if ( msg == '點名') {
       client.getProfile(event.source.userId)
         .then((profile) => {
-
-        event.reply( profile.displayName+"，點名成功。").then(function(data) {
+          event.reply( profile.displayName+"，點名成功。").then(function(data) {
           // success
           console.log(msg);
         }).catch(function(error) {
