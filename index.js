@@ -29,15 +29,14 @@ bot.on('message', function(event) {
       })
     }
     else if ( msg == '規則') {
-      console.log("1");
-      var rule = new XMLHttpRequest();
-      rule.open('GET', 'rule.txt', true);
-      console.log("2");
-      rule.onreadystatechange = function() {
-        console.log("3");
-        console.log(rule.responseText);
-        console.log("4");
-      }
+
+      fs = require('fs')
+      fs.readFile('rule.txt', 'utf8', function (err,data) {
+        if (err) {
+          return console.log(err);
+        }
+        console.log(data);
+      });
     }
     else {
       event.reply(msg).then(function(data) {
