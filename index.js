@@ -34,8 +34,8 @@ bot.on('message', function(event) {
         .then((profile) => {
         console.log("???"+profile.displayName);
         name = profile.displayName
+        console.log("!!!"+name);
       })
-      console.log("!!!"+name);
         
       event.reply("點名成功，你的userID為"+event.source.userId).then(function(data) {
         // success
