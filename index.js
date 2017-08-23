@@ -35,8 +35,8 @@ bot.on('message', function(event) {
         if (err) {
           return console.log(err);
         }
-        console.log(rule);
         event.reply(rule).then(function(data) {
+          console.log(rule);
         }).catch(function(error) {
         // error
           console.log('error');
