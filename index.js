@@ -16,7 +16,7 @@ function getName(userId) {
   client.getProfile(userId)
     .then((profile) => {
       console.log(profile.displayName);
-      return profile.displayName
+      return profile.displayName;
     })
     .catch((err) => {
       // error handling
@@ -32,7 +32,7 @@ bot.on('message', function(event) {
       event.reply("點名成功，你的userID為"+event.source.userId).then(function(data) {
         // success
         console.log(msg);
-        console.log("名稱："+getName(event.source.userId))
+        console.log("名稱："+getName(event.source.userId));
       }).catch(function(error) {
         // error
         console.log('error');
