@@ -21,12 +21,12 @@ bot.on('message', function(event) {
       client.getProfile(event.source.userId)
         .then((profile) => {
           event.reply( profile.displayName+"，點名成功。").then(function(data) {
-          console.log(msg);
-        }).catch(function(error) {
+            console.log(msg);
+          }).catch(function(error) {
           // error
-          console.log('error');
-        });
-      })
+            console.log('error');
+          });
+        })
     }
     else if ( msg == '規則') {
 
@@ -35,7 +35,11 @@ bot.on('message', function(event) {
         if (err) {
           return console.log(err);
         }
-        console.log(data);
+        event.reply(data).then(function(data) {
+        }).catch(function(error) {
+        // error
+          console.log('error');
+        });
       });
     }
     else {
