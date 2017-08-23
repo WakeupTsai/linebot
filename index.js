@@ -15,6 +15,7 @@ const client = new line.Client({
 function getName(userId) {
   client.getProfile(userId)
     .then((profile) => {
+      console.log(userId)
       console.log(profile.displayName);
       return profile.displayName;
     })
