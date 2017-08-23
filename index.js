@@ -29,19 +29,6 @@ bot.on('message', function(event) {
         })
     }
     else if ( msg == '規則') {
-
-      fs = require('fs')
-      fs.readFile('rule.txt', 'utf8', function (err,rule) {
-        if (err) {
-          return console.log(err);
-        }
-        event.reply(rule).then(function(data) {
-          console.log(rule);
-        }).catch(function(error) {
-        // error
-          console.log('error');
-        });
-      });
     }
     else {
       event.reply(msg).then(function(data) {
