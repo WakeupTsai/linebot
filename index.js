@@ -8,6 +8,7 @@ var bot = linebot({
 });
 
 bot.on('message', function(event) {
+  console.log(event);
   if (event.message.type = 'text') {
     var msg = event.message.text;
     if ( msg == '點名') {
