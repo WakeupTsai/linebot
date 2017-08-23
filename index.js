@@ -35,9 +35,13 @@ bot.on('message', function(event) {
         
     }
     else if ( msg == '規則') {
+      console.log("1");
       ruleClient.open('GET', '/rule.txt');
+      console.log("2");
       ruleClient.onreadystatechange = function() {
+        console.log("3");
         console.log(ruleClient.responseText);
+        console.log("4");
       }
     }
     else {
