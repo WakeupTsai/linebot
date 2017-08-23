@@ -13,15 +13,17 @@ const client = new line.Client({
 });
 
 function getName(userId) {
+  var name;
   client.getProfile(userId)
     .then((profile) => {
       console.log(userId)
       console.log(profile.displayName);
-      return profile.displayName;
+      name = profile.displayName;
     })
     .catch((err) => {
       // error handling
     });
+  return profile.displayName;
 }
 
 
@@ -30,7 +32,7 @@ bot.on('message', function(event) {
   if (event.message.type = 'text') {
     var msg = event.message.text;
     if ( msg == '點名') {
-      event.reply("點名成功，你的userID為"+event.source.userId).then(function(data) {
+        event.reply("點名成功，你的userID為"+event.source.userId).then(function(data) {
         // success
         console.log(msg);
         console.log("名稱："+getName(event.source.userId));
