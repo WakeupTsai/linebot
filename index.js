@@ -33,7 +33,7 @@ bot.on('message', function(event) {
     else if (msg == '測試'){
       client.getProfile(event.source.groupId)
         .then((profile) => {
-            event.reply( profile.displayName+"，測試測試。").then(function(data) {
+            event.reply( "測試測試。").then(function(data) {
             console.log(msg);
           }).catch(function(error) {
           // error
